@@ -17,9 +17,13 @@ Preferably a server, or some online deployment service to run constantly. Otherw
 The app's **main.py** function requires the following variables in order to execute:
 ```
 webhookUrl - The URL of the webhook needed to POST information to.
+
 (Optional) waitTimeMode - Determines how the program handles wait times between POSTs (Defaults to Random). -s for Strict mode, -r for Range mode
+
 (Optional) fixedWaitTimeAmount - *Strict mode only.* Determines how long the program will wait to POST information to the Webhook in minutes.
+
 (Optional) startWaitTimeAmount - *Range mode only.* Works in conjunction with endWaitTimeAmount to determine the range of time in minutes the program will wait to POST to the Webhook in minutes.
+
 (Optional) endWaitTimeAmount - *Range mode only.* Works in conjunction with startWaitTimeAmount to determine the range of time in minutes the program will wait to POST to the Webhook in minutes.
 ```
 
@@ -33,7 +37,7 @@ __Examples__:
 	
 	../data/main.py web.hook.url -r 30 90 - Waits anywhere between 30 and 90 minutes in between posts
 	
-	../data/main.py web.hook.url - Waits a random amount of time in between posts *(Min: 10 mins, Max: 120 mins)*
+	../data/main.py web.hook.url - Waits a random amount of time in between posts (Min: 10 mins, Max: 120 mins)
 
 ## License
 
