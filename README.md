@@ -30,7 +30,9 @@ Through your OS' terminal, call the application's **main.py** function with appl
 __Examples__:
 
 	```***../data/main.py web.hook.url -s 60*** - Waits 60 minutes in between posts```
+	
 	```***../data/main.py web.hook.url -r 30 90*** - Waits anywhere between 30 and 90 minutes in between posts```
+	
 	```***../data/main.py web.hook.url*** - Waits a random amount of time in between posts *(Min: 10 mins, Max: 120 mins)*```
 
 ## License
