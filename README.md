@@ -1,6 +1,10 @@
 # Coin-Price-Webscraper
 Reads cryptocurrency values and information for coins, which output to a Discord webhook.
 
+#Useage
+
+`Useage: main.py url [-s minutes | -r start end]`
+
 ### Prerequisites
 
 The following are the minimum requirement needed to run this app:
@@ -16,15 +20,24 @@ Preferably a server, or some online deployment service to run constantly. Otherw
 
 The app's **main.py** function requires the following variables in order to execute:
 ```
-webhookUrl - The URL of the webhook needed to POST information to.
+	url - The URL of the webhook needed to POST information to.
 
-(Optional) waitTimeMode - Determines how the program handles wait times between POSTs (Defaults to Random). -s for Strict mode, -r for Range mode
+	(Optional) waitTimeMode - Determines how the program handles wait times 
+	between POSTs (Defaults to Random). -s for Strict mode, -r for Range mode.
+	Strict mode requires the 'minutes' variable, and Range mode requires both 
+	the 'start' and 'end' variables. Random mode will select anywhere from 
+	10 - 120 minutes consistently between posts at random.
 
-(Optional) fixedWaitTimeAmount - *Strict mode only.* Determines how long the program will wait to POST information to the Webhook in minutes.
+	(Optional) minutes - *Strict mode only.* Determines how long 
+	the program will wait to POST information to the Webhook in minutes.
 
-(Optional) startWaitTimeAmount - *Range mode only.* Works in conjunction with endWaitTimeAmount to determine the range of time in minutes the program will wait to POST to the Webhook in minutes.
+	(Optional) start - *Range mode only.* Works in conjunction 
+	with end to determine the range of time (in minutes) the 
+	program will wait to POST to the Webhook.
 
-(Optional) endWaitTimeAmount - *Range mode only.* Works in conjunction with startWaitTimeAmount to determine the range of time in minutes the program will wait to POST to the Webhook in minutes.
+	(Optional) end - *Range mode only.* Works in conjunction 
+	with start to determine the range of time (in minutes) the 
+	program will wait to POST to the Webhook.
 ```
 
 ## Deployment
@@ -41,4 +54,4 @@ __Examples__:
 
 ## License
 
-This project is licensed under the **GNU GENERAL PUBLIC LICENSE v3.0** - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the **GNU GENERAL PUBLIC LICENSE v3.0**
