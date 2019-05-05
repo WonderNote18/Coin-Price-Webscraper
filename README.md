@@ -8,13 +8,14 @@ Reads cryptocurrency values and information for coins, which output to a Discord
 ### Prerequisites
 
 The following are the minimum requirement needed to run this app:
-```
-Python 3
-At least 8MB of disk space
-At least 2GB of RAM
-Internet connectivity
-Preferably a server, or some online deployment service to run constantly. Otherwise a constant-running PC can work as well
-```
+
+- Python 3
+- At least 8MB of disk space
+- At least 2GB of RAM
+- Internet connectivity
+- Preferably a server/online deployment service to run constantly. 
+- - Otherwise a constant-running PC can work as well
+
 
 ## Enviroment Variables
 
@@ -22,20 +23,20 @@ The app's **main.py** function requires the following variables in order to exec
 ```
 	url - The URL of the webhook needed to POST information to.
 
-	(Optional) waitTimeMode - Determines how the program handles wait times 
+	(Optional) time_mode - Determines how the program handles wait times 
 	between POSTs (Defaults to Random). -s for Strict mode, -r for Range mode.
 	Strict mode requires the 'minutes' variable, and Range mode requires both 
 	the 'start' and 'end' variables. Random mode will select anywhere from 
-	10 - 120 minutes consistently between posts at random.
+	10 - 120 minutes between posts at random.
 
-	(Optional) minutes - *Strict mode only.* Determines how long 
+	(Optional) minutes - [Strict mode only.] Determines how long 
 	the program will wait to POST information to the Webhook in minutes.
 
-	(Optional) start - *Range mode only.* Works in conjunction 
+	(Optional) start - [Range mode only.] Works in conjunction 
 	with end to determine the range of time (in minutes) the 
 	program will wait to POST to the Webhook.
 
-	(Optional) end - *Range mode only.* Works in conjunction 
+	(Optional) end - [Range mode only.] Works in conjunction 
 	with start to determine the range of time (in minutes) the 
 	program will wait to POST to the Webhook.
 ```
