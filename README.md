@@ -14,7 +14,7 @@ The following are the minimum requirement needed to run this app:
 - At least 2GB of RAM
 - Internet connectivity
 - Preferably a server/online deployment service to run constantly. 
-- - Otherwise a constant-running PC can work as well
+  - Otherwise a constant-running PC can work as well
 
 
 ## Enviroment Variables
