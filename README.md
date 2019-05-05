@@ -29,7 +29,7 @@ webhookUrl - The URL of the webhook needed to POST information to.
 
 ## Deployment
 
-Through your OS' terminal, call the application's **main.py** function with applicable enviroment variables. The process will continue to run until termination.
+Through your OS' terminal, call the application's **main.py** function with applicable command line arguments. The process will continue to run until termination.
 
 __Examples__:
 
