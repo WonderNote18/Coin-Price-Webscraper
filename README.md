@@ -1,10 +1,6 @@
 # Coin-Price-Webscraper
 Reads cryptocurrency values and information for coins, which output to a Discord webhook.
 
-# Useage
-
-`Useage: main.py url [-s minutes | -r start end]`
-
 ### Prerequisites
 
 The following are the minimum requirement needed to run this app:
@@ -16,6 +12,9 @@ The following are the minimum requirement needed to run this app:
 - Preferably a server/online deployment service to run constantly. 
   - Otherwise a constant-running PC can work as well
 
+# Useage
+
+`Useage: main.py url [-s minutes | -r start_range end_range]`
 
 ## Enviroment Variables
 
@@ -32,11 +31,11 @@ The app's **main.py** function requires the following variables in order to exec
 	(Optional) minutes - [Strict mode only.] Determines how long 
 	the program will wait to POST information to the Webhook in minutes.
 
-	(Optional) start - [Range mode only.] Works in conjunction 
+	(Optional) start_range - [Range mode only.] Works in conjunction 
 	with end to determine the range of time (in minutes) the 
 	program will wait to POST to the Webhook.
 
-	(Optional) end - [Range mode only.] Works in conjunction 
+	(Optional) end_range - [Range mode only.] Works in conjunction 
 	with start to determine the range of time (in minutes) the 
 	program will wait to POST to the Webhook.
 ```
