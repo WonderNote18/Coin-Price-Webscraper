@@ -1,12 +1,20 @@
+import os
+import sys
 
+sys.path.insert(0, "../scripts")
+import cpw_init
+from app_handler import appLog
 
 class SystemInfo():
 	def __init__(self):
-		self.time_flag = "Random"
-		self.start_range = None
-		self.end_range = None
-		self.fixed_range = None
-		self.webhook_url = None
+		self.system_info = {}
+		self.app_info = {
+		"url": None,
+		"time_mode": None,
+		"minutes": None,
+		"start_range": None,
+		"end_range": None}
+		self.file_info = {}
 	
-	def main_init(self, url, time_flag=None, start_range=None, end_range=None, fixed_range=None):
-		pass
+	def main_init(self, args=[]):
+		
