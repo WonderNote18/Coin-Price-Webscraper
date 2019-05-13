@@ -1,5 +1,10 @@
 from app_handler import sysInfo, appLog
 
+def __main__(args=[])
+	module_flags, app_args = read_args(args=args)
+	read_flags(flags=module_flags)
+	sysInfo.main_init_args(args=app_args)
+
 def read_args(args=[]):
 	from random import randint
 	args_len = len(args)
@@ -40,7 +45,7 @@ def read_args(args=[]):
 			
 			if time_mode == '-r':
 				args_info['url'] = url
-				args_info['time_mode'] = 'Range'
+				args_info['time_mode'] = 'Ranged'
 				
 				if args_len == 4:
 					module_flags.extend([1, "Missing end_range value"])
@@ -53,7 +58,7 @@ def read_args(args=[]):
 					module_flags.extend([1, "Too many arguments provided"])
 			elif time_mode == 'f':
 				args_info['url'] = url
-				args_info['time_mode'] = 'Range'
+				args_info['time_mode'] = 'Fixed'
 				
 				if args_len == 4:
 					minutes = args[3]
@@ -63,16 +68,18 @@ def read_args(args=[]):
 				else:
 					module_flags.extend([1, "Incorrect syntax"])
 	
+	return module_flags, args_info
+
+def read_flags(flags=[])
 	try:
-		flag_pass = module_flags[0]
-		flag_comment = module_flags[1]
+		flag_pass = flags[0]
+		flag_comment = flags[1]
 	except IndexError:
 		appLog.logger.error("Range error internal var module_flags")
 		exit("error: range error internal var module_flags")
 	else:
 		if flag_pass == 0:
 			appLog.logger.info("Args read successfully")
-			sysInfo.main_init_args(args=args_info)
 		elif flag_pass == 1:
 			appLog.logger.error(flag_comment)
 			quit("error: " + flag_comment[0].upper() + flag_comment[1:])
@@ -80,5 +87,5 @@ def read_args(args=[]):
 			appLog.logger.warning(flag_comment)
 			quit("internal error: " + flag_comment[0].upper() + flag_comment[1:])
 		else:
-			appLog.logger.error("Invalid flag info.")
+			appLog.logger.warning("Invalid flag info.")
 			quit("internal error: invalid flag info")
