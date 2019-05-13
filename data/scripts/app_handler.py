@@ -9,4 +9,5 @@ appLog = AppLogger()
 sysInfo = SystemInfo()
 
 def __init__(args=[]):
-	cpw_init.read_args(args)
+	app_args = cpw_init.__main__(args)
+	sysInfo.main_init_args(args=app_args)

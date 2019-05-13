@@ -3,7 +3,7 @@ from app_handler import sysInfo, appLog
 def __main__(args=[])
 	module_flags, app_args = read_args(args=args)
 	read_flags(flags=module_flags)
-	sysInfo.main_init_args(args=app_args)
+	return app_args
 
 def read_args(args=[]):
 	from random import randint
